@@ -1,3 +1,17 @@
 <template>
-  <h1>home</h1>
+  <div>
+  <homeheader></homeheader>
+  </div>
 </template>
+<script>
+  import homeheader from './homeHeader'
+  export default{
+    components:{
+      homeheader,
+    }
+  }
+</script>
+<style scoped>
+
+</style>
+
