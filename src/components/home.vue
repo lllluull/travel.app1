@@ -14,7 +14,7 @@
   import hotsell from './hotsell'
   import weekend from './weekend'
   import axios from 'axios'
-  export default{
+  export default {
     data(){
       return{
         iconList:[],
