@@ -3,9 +3,6 @@
     <div class="headerLeft"><span class='iconfont'>&#xe600;</span></div>
     <div class="headerInput"> <span class='iconfont'>&#xe601;</span> 游玩景点/美食/美女</div>
     <div class="headerRight">城市 <span class='iconfont'>&#xe64a;</span></div>
-
-
-
   </div>
 </template>
 <script>
