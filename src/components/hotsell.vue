@@ -4,11 +4,11 @@
      <h1 >热销产品</h1>
      </div>
 
-    <div class = 'showitem' v-for='item in hotList' :key=item.id>
-      <img class='itemimg' :src="item.imgurl">
+    <div class = 'showitem' v-for='item in recommendList' :key=item.id>
+      <img class='itemimg' :src="item.imgUrl">
       <div class='iteminfo'>
         <p class='title'>{{item.title}}</p>
-        <p class='address'>{{item.address}}</p>
+        <p class='address'>{{item.desc}}</p>
         <button class='button'>更多详情</button>
       </div>
     </div>
@@ -19,22 +19,12 @@
 </template>
 <script>
 export default {
+    props:{
+      recommendList:Array
+    },
   data () {
     return {
-      hotList:[
-        {id:1,imgurl:'http://img1.qunarzz.com/sight/p0/1501/c2/c212a154649088c1.water.jpg_200x200_69d1df69.jpg',
-          title:'水立方公园',address:'北京市朝阳区天辰东路11号奥林匹克公园内'},
-        {id:2,imgurl:'http://img1.qunarzz.com/sight/p0/1501/c2/c212a154649088c1.water.jpg_200x200_69d1df69.jpg',
-          title:'水立方公园',address:'北京市朝阳区天辰东路11号奥林匹克公园内'},
-          {id:3,imgurl:'http://img1.qunarzz.com/sight/p0/1501/c2/c212a154649088c1.water.jpg_200x200_69d1df69.jpg',
-          title:'水立方公园',address:'北京市朝阳区天辰东路11号奥林匹克公园内'},
-          {id:4,imgurl:'http://img1.qunarzz.com/sight/p0/1501/c2/c212a154649088c1.water.jpg_200x200_69d1df69.jpg',
-          title:'水立方公园',address:'北京市朝阳区天辰东路11号奥林匹克公园内'},
-          {id:5,imgurl:'http://img1.qunarzz.com/sight/p0/1501/c2/c212a154649088c1.water.jpg_200x200_69d1df69.jpg',
-          title:'水立方公园',address:'北京市朝阳区天辰东路11号奥林匹克公园内'},
-          {id:6,imgurl:'http://img1.qunarzz.com/sight/p0/1501/c2/c212a154649088c1.water.jpg_200x200_69d1df69.jpg',
-          title:'水立方公园',address:'北京市朝阳区天辰东路11号奥林匹克公园内'},
-      ]
+
     }
   }
 }
@@ -49,6 +39,7 @@ export default {
     height .8rem
     line-height .8rem
     padding-left .2rem
+    font-weight bolder
   .showitem
     display :flex
     overflow : hidden

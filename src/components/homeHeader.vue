@@ -2,7 +2,7 @@
   <div class="header">
     <div class="headerLeft"><span class='iconfont'>&#xe600;</span></div>
     <div class="headerInput"> <span class='iconfont'>&#xe601;</span> 游玩景点/美食/美女</div>
-    <div class="headerRight">城市 <span class='iconfont'>&#xe64a;</span></div>
+    <router-link to="/city"><div class="headerRight">城市 <span class='iconfont'>&#xe64a;</span></div></router-link>
   </div>
 </template>
 <script>
@@ -34,5 +34,6 @@
     width : 1.24rem
     float :right
     text-align :center
+    color :#fff
 </style>
 

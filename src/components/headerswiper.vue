@@ -2,7 +2,7 @@
 <div class="wrape">
   <swiper :options="swiperOption"  >
 
-    <swiper-slide v-for='item of imgurl' :key=item.id><img :src="item.url" alt="" class='swiperimg'></swiper-slide>
+    <swiper-slide v-for='item of swiperList' :key=item.id><img :src="item.imgUrl" alt="" class='swiperimg'></swiper-slide>
 
 
     <div class="swiper-pagination"  slot="pagination"></div>
@@ -15,6 +15,9 @@
 <script>
   export default {
     name: 'carrousel',
+    props:{
+      swiperList:Array
+    },
     data() {
       return {
         swiperOption: {
