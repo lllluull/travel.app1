@@ -7,7 +7,7 @@
   </div>
   <div class="positionlist">
     <div class='positionlistinner'>
-      <div class="llist">北京</div>
+      <div class="llist" color='green'>{{this.$store.state.city}}</div>
     </div>
   </div>
   </div>
@@ -16,16 +16,16 @@
   </div>
   <div class="positionlist">
     <div class='positionlistinner' v-for='item in hotCities' :key = item.id>
-      <div class="llist">{{item.name}}</div>
+      <div class="llist" @click="showname(item.name)">{{item.name}}</div>
     </div>
   </div>
-  <div v-for='(value,key) in cities' :key=key>
+  <div v-for='(value,key) in cities' :key=key :ref=key>
    <div class='maintitle'>
      {{key}}
   </div>
   <div class="alllist" v-for ='item in value' :key=item.id >
     <div class="listcontent">
-      <div class='listcontentinner'>{{item.name}}</div>
+      <div class='listcontentinner' @click="showname(item.name)">{{item.name}}</div>
       </div>
 
   </div>
@@ -38,11 +38,34 @@ import Bscroll from 'better-scroll'
 export default {
   mounted(){
 
-    const scroll = new Bscroll(this.$refs.wrapper)
+    this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  updated(){
+
   },
   props:{
     hotCities:Array,
-    cities:Object
+    cities:Object,
+    letter:String
+  },
+  watch:{
+    letter () {
+      if(this.letter){
+        const element = this.$refs[this.letter][0]
+        console.log(element)
+        this.scroll.scrollToElement(element)
+      }
+    }
+  },
+  methods:{
+    showname(city){
+      console.log(city)
+      this.$store.commit('showCity',city)
+      this.$router.push('/')
+    },
+    getCity(){
+
+    }
   }
 }
 </script>

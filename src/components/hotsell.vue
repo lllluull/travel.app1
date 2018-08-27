@@ -4,14 +4,14 @@
      <h1 >热销产品</h1>
      </div>
 
-    <div class = 'showitem' v-for='item in recommendList' :key=item.id>
+    <router-link tag='div' class = 'showitem' v-for='item in recommendList' :key=item.id :to="'detail/'+item.id">
       <img class='itemimg' :src="item.imgUrl">
       <div class='iteminfo'>
         <p class='title'>{{item.title}}</p>
         <p class='address'>{{item.desc}}</p>
         <button class='button'>更多详情</button>
       </div>
-    </div>
+    </router-link>
 
 
 

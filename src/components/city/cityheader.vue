@@ -2,7 +2,7 @@
 <div>
 
   <div class="cityselector">
-    <router-link to="/home"><div class='iconfont cityheaderleft'>&#xe600;</div></router-link>
+    <router-link to="/home"><div class='iconfont cityheaderleft'>&#xe602;</div></router-link>
     城市选择
   </div>
   </div>

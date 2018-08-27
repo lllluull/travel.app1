@@ -1,9 +1,15 @@
 <template>
 <div>
   <cityheader></cityheader>
-  <citysearch></citysearch>
-  <citylist :hotCities = 'hotCities' :cities = 'cities'></citylist>
-  <right :cities = 'cities'></right>
+  <citysearch :cities = 'cities'></citysearch>
+  <citylist
+  :hotCities = 'hotCities'
+  :cities = 'cities'
+  :letter = letter
+  ></citylist>
+  <right
+  :cities = 'cities'
+  @change="handleLetterChange"></right>
   </div>
 </template>
 <script>
@@ -22,7 +28,8 @@
     data(){
       return{
       hotCities:[],
-      cities: {}
+      cities: {},
+      letter:''
       }
 
     },
@@ -41,6 +48,9 @@
         this.hotCities = myMsg.hotCities
         this.cities = myMsg.cities
 
+      },
+      handleLetterChange(letter){
+        this.letter = letter
       }
     }
   }

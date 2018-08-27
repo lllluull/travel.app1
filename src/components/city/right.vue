@@ -1,8 +1,12 @@
 <template>
 <div>
   <ul class='alllist'>
-    <li v-for='(value,key) in cities' :key='key'>{{key}}</li>
+    <li v-for='(value,key) in cities' :key='key'
+     @click='handltest'
    
+
+
+     >{{key}}</li>
   </ul>
   </div>
 </template>
@@ -10,6 +14,13 @@
   export default {
     props:{
       cities:Object
+    },
+    methods:{
+      handltest(e){
+        this.$emit('change',e.target.innerText)
+
+
+      }
     }
 
   }
